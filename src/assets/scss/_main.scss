@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------ *\
+	Main
+\* ------------------------------------------------------------ */
+
+.main {
+	&.footerShown {
+		.section.current:not(.footer) {
+			transform: translateY(-100%) !important; 
+		}
+
+		.section.footer {
+			opacity: 1; 
+
+			.section__inner {
+				opacity: 1; 
+			}
+		}
+
+		.footer {
+			.par {
+				transform: none !important;
+			}
+		}
+	}
+}

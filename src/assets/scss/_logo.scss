@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------ *\
+	Logo
+\* ------------------------------------------------------------ */
+
+.logo {
+	font-size: 0; 
+	line-height: 0; 
+}
+
+
+.ico-arrow-down {
+	width: 12px; 
+	height: 7px; 
+}
+
+.ico-eternity {
+	width: 19px; 
+	height: 10px; 
+}
+
+.ico-letter-a {
+	width: 90px; 
+	height: 75px; 
+}
+
+.ico-restart {
+	width: 16px; 
+	height: 16px; 
+}
+
+@media #{$mobile} {
+	.ico-letter-a {
+		width: 35px; 
+		height: 29px; 
+	}
+}

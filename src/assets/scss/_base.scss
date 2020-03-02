@@ -1,0 +1,85 @@
+/* ------------------------------------------------------------ *\
+	Base
+\* ------------------------------------------------------------ */
+
+body {
+	min-width: 320px;
+	background: #fff;
+	font-family: $font-quat;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: #000;
+	overflow: hidden; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-vt; 
+	font-weight: 400; 
+	letter-spacing: 0; 
+}
+
+h1 {
+	font-size: 70px; 
+	line-height: .86; 
+}
+
+h2 {
+	font-size: 40px; 
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+
+	&:hover,
+	&[href^="tel"] {
+		text-decoration: none;
+	}
+}
+
+
+.text-center {
+	text-align: center; 
+}
+
+.text-right {
+	text-align: right; 
+}
+
+@media #{$tablet-portrait} {
+	h1 {
+		font-size: 60px; 
+	}
+
+	h2 {
+		font-size: 32px; 
+	}
+}
+
+@media #{$mobile} {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.15; 
+	}
+
+	body {
+		font-size: 16px; 
+	}
+
+	h1 {
+		font-size: 36px; 
+	}
+
+	h2 {
+		font-size: 36px; 
+	}
+}

@@ -1,0 +1,82 @@
+/* ------------------------------------------------------------ *\
+	List
+\* ------------------------------------------------------------ */
+
+[class^="list-"] {
+	list-style: none outside none;
+}
+
+
+/* ------------------------------------------------------------ *\
+	List Logos
+\* ------------------------------------------------------------ */
+
+.list-logos {
+	padding-top: 36px; 
+	display: flex; 
+	justify-content: center;
+	margin: 0 -30px; 
+
+	li {
+		flex: 0 0 auto;
+		padding: 0 30px; 
+	}
+
+	a {
+		display: block; 
+		text-decoration: none; 
+	}
+
+	@media #{$mobile} {
+		margin: 0 -10px; 
+
+		li {
+			padding: 0 10px; 
+			flex: 0 0 50%;
+			max-width: 50%; 
+		}
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	List Links
+\* ------------------------------------------------------------ */
+
+.list-links {
+	font-size: 41px; 
+	text-transform: uppercase; 
+
+
+	li {
+		& + li {
+			margin-top: -2px; 
+		}
+	}
+
+	a {
+		text-decoration: none; 
+		position: relative; 
+		transition: opacity .3s;
+
+		&:hover {
+			text-decoration: underline; 
+		}
+
+		&:before {
+			content: '>'; 
+			display: inline-block; 
+			margin: 0 12px 0 0; 
+		}
+	}
+	
+	@media (max-width: 1440px) {
+		font-size: 30px; 
+
+		li {
+			& + li {
+				margin-top: -5px; 
+			}
+		}
+	}
+}
+
