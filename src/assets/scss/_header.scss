@@ -13,6 +13,12 @@
 	transform: translateY(1px); 
 	pointer-events: none;
 
+	&.logo-visible {
+		.header__logo {
+			opacity: 1; 
+		}
+	}
+
 	&.fixed-top {
 		transform: translateY(0) !important; 
 		transition: transform .3s;
@@ -30,6 +36,9 @@
 	}
 
 	.header__logo {
+		opacity: 0; 
+		transition: opacity .3s;
+		
 		a {
 			display: inline-block; 
 			width: 144px; 

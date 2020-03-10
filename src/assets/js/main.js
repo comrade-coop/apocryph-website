@@ -43,6 +43,8 @@ import header from './header.js';
 		const freeSpace = shellHeight - contentHeight ;
 
 		$('.header__inner').css('height', (freeSpace/2 ) + 25);
+
+		vars.$header.addClass('logo-visible')
 	});
 
 	

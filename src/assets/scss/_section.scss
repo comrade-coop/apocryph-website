@@ -408,6 +408,12 @@
 			font-size: 41px; 
 			text-decoration: none; 
 
+			&:hover {
+				span {
+					text-decoration: underline; 
+				}
+			}
+
 			strong {
 				display: inline-block; 
 				min-width: 20px; 
