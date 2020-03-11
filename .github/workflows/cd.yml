@@ -28,9 +28,7 @@ jobs:
         yarn prod
       
     - name: Upload to pinata 
-      run: |
-        mkdir -p /tmp/hash/
-        ipfs-deploy -p pinata build/ > /tmp/hash/hash.txt
+      run: mkdir -p /tmp/hash/ && ipfs-deploy -s apocryph.network -p pinata build/ -C -O > /tmp/hash/hash.txt
       env:
         IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.pinataApiKey }}
         IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.pinataApiSecret }}
