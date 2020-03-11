@@ -36,8 +36,12 @@ a {
 	color: inherit;
 	text-decoration: underline;
 
-	&:hover,
-	&[href^="tel"] {
+	&:hover {
+		text-decoration: underline wavy;
+	}
+
+	&[href^="tel"],
+	&[href^="tel"]:hover {
 		text-decoration: none;
 	}
 }

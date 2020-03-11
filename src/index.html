@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<include src="head.html"></include>
+	<head>
+		<include src="head.html"></include>
+
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5JCR9ZH');</script>
+		<!-- End Google Tag Manager -->
+		
+	</head>
 <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JCR9ZH"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 	<div class="wrapper">
 		<div class="main">
 			<div class="section current section--home" id="home" data-tooltip="Home">
@@ -74,7 +90,7 @@
 					<div class="shell">
 						<div class="section__container">
 							<div class="section__content section__content--fluid">
-								<h2>Developer Productivity</h2>
+								<h2>Developer productivity</h2>
 
 								<p>Apocryph is built on top of <strong><a href="https://github.com/obecto/perper" target="_blank">Perper</a></strong> - a serverless stream processing framework maintained separately by members of our team. The main entities in Apocryph are called Agents - they process incoming messages as a stream and send new ones as output. Each Agent runs as a containerized lambda function app, that can be written in C#, Python, JavaScript or come as a WebAssembly.</p>
 
@@ -106,7 +122,7 @@
 				<div class="section__inner">
 					<div class="shell">
 						<div class="section__content section__content--2 ">
-							<h2>Proactive Entities</h2>
+							<h2>Proactive entities</h2>
 
 							<p>Since autonomy is our main focus, Agents can proactively initiate their own execution by scheduling reminders and subscribing to events from other Agents. This opens entirely new use cases and more natural programming models. For example, users can have their own Proxy Agents on the network, to actively manage and monitor tasks for them</p>
 
@@ -160,7 +176,7 @@
 									<img src="assets/images/temp/clouds-6@2x.png" alt="" width="264">
 								</div><!-- /.section__image -->
 
-								<h2>Free user Transactions</h2>
+								<h2>Free user transactions</h2>
 
 								<p>Messages in the network are processed only if they come with a valid execution ticket for the computing resources requested. These tickets can be paid either by the sending or the receiving party, while agents have their own wallets so they can pay for executing messages coming from certain users. This is crucial to enable use cases like voting, rating and user feedback that were unfeasible with previous blockchain economic models that require users to pay each transaction.</p>
 							</div><!-- /.section__content -->
@@ -183,7 +199,7 @@
 									<img src="assets/images/temp/clouds-7@2x.png" alt="" width="426">
 								</div><!-- /.section__image -->
 
-								<h2>Scalable Network</h2>
+								<h2>Scalable network</h2>
 
 								<p>The state of each Agent is stored on a separate blockchain and the transactions on these blockchains are running in parallel to enable an extremely high transaction throughput. Agents are self-governing and each agent can declare which subset of the Apocryph network validators should validate the respective Agent’s blockchain.</p>
 							</div><!-- /.section__content -->
@@ -222,9 +238,9 @@
 									<img src="assets/images/temp/clouds-6@2x.png" alt="" width="264">
 								</div><!-- /.section__image -->
 
-								<h2>Scalable Nodes</h2>
+								<h2>Scalable nodes</h2>
 
-								<p>Since the network nodes run on Perper, they scale horizontally and each node is supposed to be more a cluster of machines, rather than just a single machine. This enables the network validators to run nodes on professional infrastructure and achieve economies of scale.</p>
+								<p>Since the network nodes run on <strong><a href="https://github.com/obecto/perper" target="_blank">Perper</a></strong>, they scale horizontally and each node is supposed to be more a cluster of machines, rather than just a single machine. This enables the network validators to run nodes on professional infrastructure and achieve economies of scale.</p>
 
 								<div class="section__image section__image--cloud section__image--20 par par-4">
 									<img src="assets/images/temp/clouds-3@2x.png" alt="" width="383">
@@ -248,7 +264,7 @@
 						</div><!-- /.section__image -->
 
 						<div class="section__content section__content--4 text-center">
-							<h2>Interoperability and Extensibility</h2>
+							<h2>Interoperability and extensibility</h2>
 
 							<p>With the main focus on decoupling and reusability, the Apocryph network is designed to be highly interoperable and extensible. Agents might require that certain services are running on their validator nodes and thus access any functionality needed - from sending emails to interoperability with Ethereum and decentralized training of AI.</p>
 						</div><!-- /.section__content -->
@@ -277,9 +293,16 @@
 							<div class="section__flex-placeholder"></div><!-- /.section__flex-placeholder -->
 
 							<div class="section__content section__content--5">
-								<h2>DPoS Consensus</h2>
+								<h2>Leaderless consensus</h2>
 
-								<p>The network runs on a Delegated Proof of Stake, Practical Byzantine Fault Tolerance consensus algorithm. IPFS is used for storing the block data, while block propagation and voting happen over IPFS GossipSub. By reusing established technology and existing infrastructure we significantly simplify the consensus engine, allowing more idiomatic and secure implementation.</p>
+								<p>The network runs a leaderless Byzantine fault tolerance consensus protocol inspired by 
+									<strong><a href="https://wavelet.perlin.net/whitepaper.pdf" target="_blank">Wavelet</a></strong>. 
+									It uses <strong><a href="https://ipfs.io/" target="_blank">IPFS</a></strong> 
+									for storing the block data, while block propagation and voting happen over 
+									IPFS <strong><a href="https://github.com/libp2p/specs/tree/master/pubsub/gossipsub" target="_blank">GossipSub</a></strong>. 
+									By reusing established technology and existing infrastructure we significantly 
+									simplify the consensus engine, allowing more idiomatic and secure implementation.
+								</p>
 							</div><!-- /.section__content -->
 
 							<aside class="section__aside">
@@ -496,15 +519,15 @@
 						<div class="section__col">
 							<ul class="list-links">
 								<li>
-									<a href="https://github.com/comrade-coop/apocryph/blob/master/DOCUMENTATION.md">Docs</a>
+									<a href="https://github.com/comrade-coop/apocryph/blob/master/DOCUMENTATION.md" target="_blank">Docs</a>
 								</li>
 								
 								<li>
-									<a href="https://github.com/comrade-coop/apocryph">Code</a>
+									<a href="https://github.com/comrade-coop/apocryph" target="_blank">Code</a>
 								</li>
 								
 								<li>
-									<a href="https://www.comrade.coop/">Coop</a>
+									<a href="https://www.comrade.coop/" target="_blank">Coop</a>
 								</li>
 							</ul><!-- /.list-links -->
 
