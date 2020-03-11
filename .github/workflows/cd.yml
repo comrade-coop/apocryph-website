@@ -27,6 +27,16 @@ jobs:
         yarn
         yarn prod
       
-    - name: Upload to infuria 
+    - name: Upload to pinata 
       run: |
-        ipfs-deploy -p infura build/
+        mkdir -p /tmp/hash/
+        ipfs-deploy -p pinata build/ > /tmp/hash/hash.txt
+      env:
+        IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.pinataApiKey }}
+        IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.pinataApiSecret }}
+  
+    - name: Make artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: hash.txt
+        path: /tmp/hash/
