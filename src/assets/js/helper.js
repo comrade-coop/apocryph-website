@@ -17,13 +17,23 @@ const helper = {
 
 		if(sectionHash != this.currentSectionHash){
 			this.currentSectionHash = sectionHash;
+
 			if (fbq) {
 				fbq('track', 'ViewContent', {
 					content_ids: sectionHash,
 				});
-				console.log("sectionHash = " + sectionHash);
 			} else {
 				console.log("! fbq() is not defined");
+			}
+
+			if (ga) {
+				ga('send', 'event', {
+					eventCategory: 'Section',
+					eventAction: 'open',
+					eventLabel: sectionHash
+				});
+			} else {
+				console.log("! ga() is not defined");
 			}
 		}
 
