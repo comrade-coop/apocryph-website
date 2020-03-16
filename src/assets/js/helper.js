@@ -3,6 +3,8 @@ import footer from './footer.js';
 import vars from './vars.js';
 
 const helper = {
+	currentSectionHash: '',
+
 	/**
 	 * Remove '.current' from all sections and adds it to the active one
 	 * @param  {$selector} $context sections selector
@@ -10,6 +12,21 @@ const helper = {
 	 * @return {void}  
 	 */
 	updateCurrentSection($context, index) {
+		const section = vars.$sections[index];
+		const sectionHash = section.getAttribute('id');
+
+		if(sectionHash != this.currentSectionHash){
+			this.currentSectionHash = sectionHash;
+			if (fbq) {
+				fbq('track', 'ViewContent', {
+					content_ids: sectionHash,
+				});
+				console.log("sectionHash = " + sectionHash);
+			} else {
+				console.log("! fbq() is not defined");
+			}
+		}
+
 		$context.removeClass(vars.class.currentSection);
 		
 		$context[index].classList.add(vars.class.currentSection);		

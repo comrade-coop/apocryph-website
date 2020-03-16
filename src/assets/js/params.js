@@ -7,7 +7,7 @@ import deepLinks from './deepLinks.js';
 import header from './header.js';
 
 const params = {
-	freezeDelay: 500,
+	freezeDelay: 100,
 	isWaiting: false,
 	_currentIndex: 0,
 	isScrolled: false,
