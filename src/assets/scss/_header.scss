@@ -36,6 +36,7 @@
 	}
 
 	.header__logo {
+		font-size: 0;
 		opacity: 0; 
 		transition: opacity .3s;
 		
@@ -47,6 +48,7 @@
 
 			svg {
 				width: 100%; 
+				
 				transition: fill .3s;
 			}
 		}
@@ -110,6 +112,7 @@
 		.header__logo {
 			a {
 				width: 80px; 
+				height: 80px; 
 			}
 		}
 

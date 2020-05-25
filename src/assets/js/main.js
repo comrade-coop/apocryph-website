@@ -10,11 +10,12 @@ import header from './header.js';
 
 ;(function(window, document, $) {
 	// Dynamically set section__inner height so it's equal on all devices
-	const winHeight = $(window).innerHeight()
+	const winHeight = $(window).innerHeight();
 	const winWidth = $(window).width();
 	const isMobile = winWidth < 767;
 
 	vars.$sections.css({maxHeight: winHeight});
+	vars.$sections.css({minHeight: winHeight});
 
 	if ( isMobile ) {
 		vars.$sectionInners.css({minHeight: winHeight - 33});
@@ -30,11 +31,13 @@ import header from './header.js';
 	// Center Section Home logo
 	$(window).on('load', function(event) {
 		const $sectionHome = $('.section--home');
-		const $shell = $sectionHome.find('.shell')
+		const $shell = $sectionHome.find('.shell');
+		const $headerLogo = $('.header__logo a');
 		const $logo = $sectionHome.find('.section__head');
 		const $body = $sectionHome.find('.section__body');
 		const $actions = $sectionHome.find('.section__actions');
 
+		const headerLogoHeight = $headerLogo.height();
 		const logoHeight = $logo.height();
 		const bodyHeight = $body.height();
 		const actionsHeight = $actions.outerHeight();
@@ -42,9 +45,14 @@ import header from './header.js';
 		const shellHeight = $shell.height();
 		const freeSpace = shellHeight - contentHeight ;
 
-		$('.header__inner').css('height', (freeSpace/2 ) + 25);
+		if ( isMobile ) {
+			$('.header__inner').css('height', ((freeSpace + headerLogoHeight)/2 ));
+		} 
+		else {
+			$('.header__inner').css('height', ((freeSpace + headerLogoHeight)/2 ) + 25 );
+		}
 
-		vars.$header.addClass('logo-visible')
+		vars.$header.addClass('logo-visible');
 	});
 
 	
