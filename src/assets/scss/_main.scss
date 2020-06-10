@@ -11,6 +11,11 @@
 		.section.footer {
 			opacity: 1; 
 
+			&:after {
+				transition-delay: 0s; 
+				opacity: 0; 
+				}
+
 			.section__inner {
 				opacity: 1; 
 			}

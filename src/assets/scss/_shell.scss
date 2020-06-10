@@ -6,8 +6,9 @@
 	max-width: $shell-max-width + $shell-gutter * 2;
 	padding-right: $shell-gutter;
 	padding-left: $shell-gutter;
-	margin: auto;
 	width: 100%; 
+	flex: 0 0 auto;
+
 
 	&--fluid {
 		max-width: none;

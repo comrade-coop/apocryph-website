@@ -205,6 +205,68 @@
 
 	}	
 
+@media (max-width: 1500px) and (max-height: 750px) and (min-width: $responsive-sm){
+		font-size: 16px; 
+		width: 32vw; 
+		height: 32vw; 
+		padding-bottom: 30px; 
+
+		.cube__content {
+			min-height: 32vw; 
+			font-size: 16px; 
+			line-height: 1.4; 
+			width: calc(100% + 4px); 
+
+			&-outer {
+				padding: 15px; 
+			}
+
+			h2 {
+				line-height: 1.1; 
+				margin-bottom: 5px; 
+			}
+
+			p + p {
+				margin-top: 5px; 
+			}
+		}
+
+		.flex {
+			width: 8vw; 
+			height: 8vw; 
+		}
+
+		.cube {
+			margin: 0 8vw -0px 0; 
+		}
+
+		.wall {
+			width: 8vw; 
+			height: 8vw; 
+			left: calc(-8vw / 2);
+			top: calc(-8vw / 2);
+		}
+
+		.front {
+		  transform: translateZ(calc(8vw / 2));
+		}
+		.back {
+		  transform: translateZ(calc(-8vw / 2)) rotateY(180deg);
+		}
+		.right {
+		  transform: translateX(calc(8vw / 2)) rotateY(90deg);
+		}
+		.left {
+		  transform: translateX(calc(-8vw / 2)) rotateY(-90deg);
+		}
+		.top {
+		  transform: translateY(calc(-8vw / 2)) rotateX(90deg);
+		}
+		.bottom {
+		  transform: translateY(calc(8vw / 2)) rotateX(-90deg);
+		}
+	}
+
 	@media #{$tablet-portrait} {
 		width: 64vw; 
 		height: 64vw; 

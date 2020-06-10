@@ -42,6 +42,11 @@ const helper = {
 		$context[index].classList.add(vars.class.currentSection);		
 
 		footer.isShown = vars.$footer.hasClass(vars.class.currentSection);
+
+		setTimeout(() => {
+			$context.removeClass(vars.class.animated)
+			$context[index].classList.add(vars.class.animated);
+		}, vars.animationDuration)
 	},
 
 	/**

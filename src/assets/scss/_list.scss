@@ -27,6 +27,10 @@
 		text-decoration: none; 
 	}
 
+	@media (max-width: 1500px) and (max-height: 750px) and (min-width: $responsive-sm){
+		padding-top: 15px; 
+	}
+
 	@media #{$mobile} {
 		margin: 0 -10px; 
 
@@ -68,6 +72,8 @@
 			margin: 0 12px 0 0; 
 		}
 	}
+
+
 	
 	@media (max-width: 1440px) {
 		font-size: 30px; 
@@ -76,6 +82,12 @@
 			& + li {
 				margin-top: -5px; 
 			}
+		}
+	}
+
+	@media (max-width: 1500px) and (max-height: 750px) and (min-width: $responsive-sm){
+		li + li {
+			margin-top: -10px; 
 		}
 	}
 }

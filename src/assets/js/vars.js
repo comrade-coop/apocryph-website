@@ -1,6 +1,7 @@
 const vars = {
 	$win: $(window),
 	$doc: $(document),
+	animationDuration: 1500,
 	$wrapper: $('.wrapper'),
 	winHeight: $(window).innerHeight(),
 	$main: $('.main'),
@@ -17,13 +18,14 @@ const vars = {
 	class: {
 		footerActive: 'footerShown',
 		currentSection: 'current',
+		animated: 'animated',
 		navCurrent: 'current',
 		navVisible: 'visible',
 		btnMenuActive: 'nav-trigger--active',
 		sectionDark: 'section--dark',
 		mainDark: 'bg-dark',
 		headerScrolled: 'scrolled',
-		headerAppended: 'header-appended'
+		headerAppended: 'header-appended',
 	}
 }
 
