@@ -764,11 +764,11 @@
 
 			.section__media {
 				width: 100%; 
-				padding-top: 30px; 
+				padding-top: 0px;
 
-				// iframe {
-				// 	height: 250px; 
-				// }
+				iframe {
+					height: 250px; 
+				}
 			}
 
 			.socials {
