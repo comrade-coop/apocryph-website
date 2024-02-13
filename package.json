@@ -40,6 +40,7 @@
         "gulp-uglify": "^3.0.1",
         "imagemin-mozjpeg": "^6.0.0",
         "imagemin-pngquant": "^5.0.1",
+        "ipfs-deploy": "^11.0.1",
         "md5-file": "^3.2.3",
         "postcss": "^6.0.14",
         "postcss-easy-import": "^3.0.0",
