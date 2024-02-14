@@ -22,13 +22,6 @@ jobs:
         yarn prod
       
     - name: Upload to pinata 
-      run: mkdir -p /tmp/hash/ && npx ipfs-deploy -C -p pinata build/ > /tmp/hash/hash.txt
-      env:
-        IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.pinataApiKey }}
-        IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.pinataApiSecret }}
-  
-    - name: Make artifact
-      uses: actions/upload-artifact@v1
+      uses: aquiladev/ipfs-action@master
       with:
-        name: hash.txt
-        path: /tmp/hash/
+        path: ./build
