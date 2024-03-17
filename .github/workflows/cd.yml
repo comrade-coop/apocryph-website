@@ -21,7 +21,9 @@ jobs:
         yarn
         yarn prod
       
-    - name: Upload to pinata 
+    - name: Upload to ipfs 
       uses: aquiladev/ipfs-action@master
       with:
         path: ./build
+        service: ipfs
+        host: apocryph-ipfs.kubocloud.io
