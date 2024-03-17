@@ -37,7 +37,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: website
-        path: deployment/
+        path: deployment/website/
     
     - name: Upload to ipfs
       env:
