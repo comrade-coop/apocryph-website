@@ -21,9 +21,30 @@ jobs:
         yarn
         yarn prod
       
-    - name: Upload to ipfs 
-      uses: aquiladev/ipfs-action@master
+    - name: Upload website
+      uses: actions/upload-artifact@v4
       with:
-        path: ./build
-        service: ipfs
-        host: apocryph-ipfs.kubocloud.io
+        name: website
+        path: build/
+
+  deploy:
+    runs-on: ubuntu-latest
+    container: node:16-stretch
+    steps:
+      
+    - name: Download website
+      uses: actions/download-artifact@v4
+      with:
+        name: website
+        path: $GITHUB_WORKSPACE/deployment
+    
+    - name: Upload to ipfs
+      env:
+        IPFS_URL: https://apocryph-ipfs.kubocloud.io/api/v0
+        IPFS_FOLDER: deployment
+        CF_ID: ${{ secrets.CF_ID }}
+        CF_SECRET: ${{ secrets.CF_SECRET }}
+      run: |
+        cd $GITHUB_WORKSPACE
+        npm i kubo-rpc-client
+        node --input-type=module -e 'import{create as e,globSource as l}from"kubo-rpc-client";let client=e({url:process.env.IPFS_URL,headers:{"CF-Access-Client-Id":process.env.CF_ID,"CF-Access-Client-Secret":process.env.CF_SECRET}});for await(let file of client.addAll(l(process.env.IPFS_FOLDER,"**/*")))console.log(file);'
