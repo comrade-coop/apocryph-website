@@ -22,7 +22,7 @@ jobs:
         yarn prod
       
     - name: Upload website
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v2
       with:
         name: website
         path: build/
@@ -34,7 +34,7 @@ jobs:
     steps:
       
     - name: Download website
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v3
       with:
         name: website
         path: $GITHUB_WORKSPACE/deployment
