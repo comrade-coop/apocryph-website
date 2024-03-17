@@ -37,7 +37,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: website
-        path: $GITHUB_WORKSPACE/deployment
+        path: deployment/
     
     - name: Upload to ipfs
       env:
