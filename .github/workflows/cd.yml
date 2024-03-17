@@ -48,4 +48,4 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         npm i kubo-rpc-client
-        node --input-type=module -e 'var f;import{create as e,globSource as l}from"kubo-rpc-client";let client=e({url:process.env.IPFS_URL,headers:{"CF-Access-Client-Id":process.env.CF_ID,"CF-Access-Client-Secret":process.env.CF_SECRET}});for await(f of client.addAll(l(process.env.IPFS_FOLDER,"**/*")))console.log(f);console.log(client.name.publish(f));'
+        node --input-type=module -e 'var f;import{create as e,globSource as l}from"kubo-rpc-client";let client=e({url:process.env.IPFS_URL,headers:{"CF-Access-Client-Id":process.env.CF_ID,"CF-Access-Client-Secret":process.env.CF_SECRET}});for await(f of client.addAll(l(process.env.IPFS_FOLDER,"**/*")))console.log(f);let n=await client.name.publish(f.cid);console.log(n);'
