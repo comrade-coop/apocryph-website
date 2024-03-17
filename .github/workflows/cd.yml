@@ -28,6 +28,7 @@ jobs:
         path: build/
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     container: node:16-stretch
     steps:
