@@ -108,18 +108,11 @@ import header from './header.js';
 
 	// Toggle footer and update footer object
 	vars.$btnMenu.on('click', function(event) {
-		const $this = $(this);
-
-		event.preventDefault();
-
 		footer.toggle();
-
 		footer.updateIsCurrent();
 
-		if ( footer.isCurrent ) {
-			helper.updateCurrentSection(vars.$sections, vars.sectionsCount - 2);
-
-			helper.setWaitingDelay(params.freezeDelay);
+		if(!footer.isShown) {
+			params.currentIndex = params._currentIndex;
 		}
 		
 		event.preventDefault();
