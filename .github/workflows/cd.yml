@@ -4,14 +4,11 @@ name: CD
 
 on:
   push:
-    branches: [ master, rel ]
+    branches: [ rel ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    container: node:14-stretch
-    env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
       
     - name: Checkout
