@@ -1,0 +1,7 @@
+{
+  "name": "aapp-toolkit-redirect-api",
+  "version": "1.0.0",
+  "description": "Redirect API for aApps built with aApp Toolkit.",
+  "main": "index.js",
+  "dependencies": {}
+}

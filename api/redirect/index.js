@@ -1,7 +1,8 @@
 module.exports = async function (context, req) {
   const host = (req.headers["host"] || "").toLowerCase();
+  const urlPath = (req.url || "").split("?")[0];
 
-  if (host == "teesa.ai" || host == "www.teesa.ai") {
+  if (urlPath == "/" && (host == "teesa.ai" || host == "www.teesa.ai")) {
     context.res = {
       status: 302,
       headers: {
@@ -11,7 +12,5 @@ module.exports = async function (context, req) {
     return;
   }
 
-  context.res = {
-    status: 404
-  };
+  context.res = { status: 404 };
 };
