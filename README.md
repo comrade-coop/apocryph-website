@@ -1,3 +1,3 @@
 # Apocryph website
 
-The website for [Apocryph](https://apocryph.network/).
+The website for [Apocryph](https://apocryph.network/) project.
