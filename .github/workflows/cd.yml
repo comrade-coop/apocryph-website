@@ -20,17 +20,10 @@ jobs:
           yarn
           yarn prod
               
-    - name: Upload to ipfs
-      uses: addnab/docker-run-action@v3
+    - name: Deploy to Azure Static Web Apps
+      uses: Azure/static-web-apps-deploy@1
       with:
-        image: node:16-stretch
-        options: >-
-          -v ${{ github.workspace }}/build:/workdir/deployment/website
-          -e IPFS_URL=https://apocryph-ipfs.kubocloud.io/api/v0
-          -e IPFS_FOLDER=deployment
-          -e CF_ID=${{ secrets.CF_ID }}
-          -e CF_SECRET=${{ secrets.CF_SECRET }}
-        run: |
-          cd /workdir
-          npm i kubo-rpc-client@3.0.4
-          node --input-type=module -e 'var f;import{create as e,globSource as l}from"kubo-rpc-client";let client=e({url:process.env.IPFS_URL,headers:{"CF-Access-Client-Id":process.env.CF_ID,"CF-Access-Client-Secret":process.env.CF_SECRET}});for await(f of client.addAll(l(process.env.IPFS_FOLDER,"**/*")))console.log(f);let n=await client.name.publish(f.cid);console.log(n);'
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+        action: "upload"
+        app_location: ${{ github.workspace }}/build
+        skip_app_build: true
