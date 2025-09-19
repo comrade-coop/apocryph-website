@@ -9,8 +9,12 @@ module.exports = async function (context, req) {
         Location: "https://v0048.teesa.ai/"
       }
     };
-    return;
+  } else {
+    context.res = {
+      status: 302,
+      headers: {
+        Location: "/index.html"
+      }
+    };
   }
-
-  context.res = { status: 404 };
 };
